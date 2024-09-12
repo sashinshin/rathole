@@ -1,3 +1,4 @@
+// App.tsx
 import React, { useState } from 'react';
 import DraggableBox from './DraggableBox';
 
@@ -11,27 +12,37 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center space-x-4">
+      {/* Render three draggable boxes with different sizes and header colors */}
       <DraggableBox
-        content="Box 1: Drag me!"
+        content="Box 1: content"
         initialX={0}
         initialY={0}
         zIndex={activeBoxIndex === 0 ? 10 : 1}
+        headerColor="#1E3A8A" // Blue header
         onDragStart={() => handleDragStart(0)}
+        width="150px"
+        height="300px" // Tall box
       />
       <DraggableBox
-        content="Box 2: I'm draggable too!"
-        initialX={150}
+        content="Box 2: more content"
+        initialX={170}
         initialY={0}
         zIndex={activeBoxIndex === 1 ? 10 : 1}
+        headerColor="#10B981" // Green header
         onDragStart={() => handleDragStart(1)}
+        width="200px"
+        height="200px" // Big square box
       />
       <DraggableBox
-        content="Box 3: Don't forget me!"
-        initialX={300}
+        content="Box 3: content in here as well"
+        initialX={380}
         initialY={0}
         zIndex={activeBoxIndex === 2 ? 10 : 1}
+        headerColor="#F59E0B" // Yellow header
         onDragStart={() => handleDragStart(2)}
+        width="150px"
+        height="300px" // Tall box similar to the first
       />
     </div>
   );
