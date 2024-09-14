@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ash-website/static/css/main.52066ca3.css",
-    "main.js": "/ash-website/static/js/main.27c68ae7.js",
+    "main.js": "/ash-website/static/js/main.52161a65.js",
     "static/js/453.3cf46d38.chunk.js": "/ash-website/static/js/453.3cf46d38.chunk.js",
     "static/media/main_background.jpg": "/ash-website/static/media/main_background.abd74df00fff94f24e62.jpg",
     "index.html": "/ash-website/index.html",
     "main.52066ca3.css.map": "/ash-website/static/css/main.52066ca3.css.map",
-    "main.27c68ae7.js.map": "/ash-website/static/js/main.27c68ae7.js.map",
+    "main.52161a65.js.map": "/ash-website/static/js/main.52161a65.js.map",
     "453.3cf46d38.chunk.js.map": "/ash-website/static/js/453.3cf46d38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.52066ca3.css",
-    "static/js/main.27c68ae7.js"
+    "static/js/main.52161a65.js"
   ]
 }
