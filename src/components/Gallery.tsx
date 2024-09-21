@@ -25,7 +25,7 @@ const images = [
 const Gallery: React.FC = () => {
   return (
     <section id="work" className="py-20 px-6 lg:px-10 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Work</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">gallery</h2>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
         {images.map((image, index) => (
           <div

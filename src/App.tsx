@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import About from './components/About';
+import Footer from './components/Footer';
+
 
 const App: React.FC = () => {
   return (
@@ -12,6 +14,7 @@ const App: React.FC = () => {
         <Hero />
         <Gallery />
         <About />
+        <Footer />
       </main>
     </div>
   );
