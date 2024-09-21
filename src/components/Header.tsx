@@ -55,8 +55,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-{
-  /* <nav className="flex justify-between items-center">
-<div className="font-bold text-xl">RATHOLE</div>
-<ul className="flex space-x-4"> */
-}
