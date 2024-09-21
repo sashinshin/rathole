@@ -17,7 +17,6 @@ const Footer: React.FC = () => {
       if (scrollElement && !isScrolling) {
         scrollElement.scrollLeft += 1;
 
-        console.log(scrollElement.scrollLeft);
         if (
           scrollElement.scrollLeft >= scrollElement.scrollWidth / 2 ||
           scrollElement.scrollLeft <= 1
