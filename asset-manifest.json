@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rathole/static/css/main.82386986.css",
-    "main.js": "/rathole/static/js/main.1927bf63.js",
+    "main.js": "/rathole/static/js/main.6c6e5739.js",
     "static/js/453.5cee1bd1.chunk.js": "/rathole/static/js/453.5cee1bd1.chunk.js",
     "index.html": "/rathole/index.html",
     "main.82386986.css.map": "/rathole/static/css/main.82386986.css.map",
-    "main.1927bf63.js.map": "/rathole/static/js/main.1927bf63.js.map",
+    "main.6c6e5739.js.map": "/rathole/static/js/main.6c6e5739.js.map",
     "453.5cee1bd1.chunk.js.map": "/rathole/static/js/453.5cee1bd1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.82386986.css",
-    "static/js/main.1927bf63.js"
+    "static/js/main.6c6e5739.js"
   ]
 }
