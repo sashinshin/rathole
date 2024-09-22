@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { IMAGES_DATA } from "./constants";
+import { IMAGES_DATA, DEBOUNCE_DELAY } from "./constants";
 import { ImageData } from "./interfaces";
-import { generateValidPosition, parsePercentage, resetImageIncrement } from "./utils";
+import { generateValidPosition, parsePercentage, resetImageIncrement, debounce } from "./utils";
 
 const Gallery: React.FC = () => {
   const [images, setImages] = useState<ImageData[]>([]);
@@ -9,32 +9,43 @@ const Gallery: React.FC = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    const updateScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
+    const handleResizeLayoutCalculation = debounce(() => {
+      if (window.innerWidth >= 1024) {
+        triggerLayoutRecalculation();
+      }
+    }, DEBOUNCE_DELAY);
 
-    window.addEventListener("resize", updateScreenSize);
+    const handleResizeLargeScreen = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    }
+
+    window.addEventListener("resize", handleResizeLayoutCalculation);
+    window.addEventListener("resize", handleResizeLargeScreen);
+
+    // Initial trigger if the window width is already above 1024px
+    if (window.innerWidth >= 1024) {
+      triggerLayoutRecalculation();
+    }
+
+    // Cleanup the event listener when the component is unmounted
     return () => {
-      window.removeEventListener("resize", updateScreenSize);
+      window.removeEventListener("resize", handleResizeLayoutCalculation);
+      window.removeEventListener("resize", handleResizeLargeScreen);
     };
   }, []);
 
-  useEffect(() => {
+  const triggerLayoutRecalculation = () => {
     let maxBottom = 0;
     resetImageIncrement();
     const containerWidth = window.innerWidth;
     const positionedImages: ImageData[] = [];
 
     for (const image of IMAGES_DATA) {
-      const newImageStyles = generateValidPosition(
-        positionedImages,
-        containerWidth
-      );
+      const newImageStyles = generateValidPosition(positionedImages, containerWidth);
       positionedImages.push({ ...image, ...newImageStyles });
 
       const imageBottom =
-        parseInt(newImageStyles.top) +
-        parsePercentage(newImageStyles.width, containerWidth);
+        parseInt(newImageStyles.top) + parsePercentage(newImageStyles.width, containerWidth);
       if (imageBottom > maxBottom) {
         maxBottom = imageBottom;
       }
@@ -44,7 +55,7 @@ const Gallery: React.FC = () => {
 
     const extraHeight = 400;
     setContainerHeight(maxBottom + extraHeight);
-  }, [isLargeScreen]);
+  };
 
   return (
     <section
