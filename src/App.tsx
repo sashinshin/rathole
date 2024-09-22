@@ -1,16 +1,13 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Gallery from './components/Gallery';
-import About from './components/About';
-import Footer from './components/Footer';
-
+import React from "react";
+import { Footer, About, Gallery, Header, Hero } from "./components";
 
 const App: React.FC = () => {
   return (
     <div className="relative">
       <Header />
-      <main className="mt-18"> {/* Adjust margin-top to account for fixed header height */}
+      <main className="mt-18">
+        {" "}
+        {/* Adjust margin-top to account for fixed header height */}
         <Hero />
         <Gallery />
         <About />
