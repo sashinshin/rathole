@@ -35,7 +35,7 @@ const Gallery: React.FC = () => {
             <img
               src={`${process.env.PUBLIC_URL}/${image.src}`}
               alt={image.alt}
-              className="w-full h-auto object-contain rounded-lg shadow-md border-2 border-black rounded-lg shadow-md hover:blur"
+              className="w-full h-auto object-contain rounded-lg shadow-md border border-black rounded-lg shadow-md hover:blur"
             />
             {/* overlay content goes here */}
           </div>
