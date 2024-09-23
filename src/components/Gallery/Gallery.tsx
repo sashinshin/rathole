@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IMAGES_DATA, DEBOUNCE_DELAY } from "./constants";
 import { ImageData } from "./interfaces";
-import { generateValidPosition, parsePercentage, resetImageIncrement, debounce } from "./utils";
+import {
+  generateValidPosition,
+  parsePercentage,
+  resetImageIncrement,
+  debounce,
+} from "./utils";
 
 const Gallery: React.FC = () => {
   const [images, setImages] = useState<ImageData[]>([]);
@@ -17,7 +22,7 @@ const Gallery: React.FC = () => {
 
     const handleResizeLargeScreen = () => {
       setIsLargeScreen(window.innerWidth >= 1024);
-    }
+    };
 
     window.addEventListener("resize", handleResizeLayoutCalculation);
     window.addEventListener("resize", handleResizeLargeScreen);
@@ -41,11 +46,15 @@ const Gallery: React.FC = () => {
     const positionedImages: ImageData[] = [];
 
     for (const image of IMAGES_DATA) {
-      const newImageStyles = generateValidPosition(positionedImages, containerWidth);
+      const newImageStyles = generateValidPosition(
+        positionedImages,
+        containerWidth
+      );
       positionedImages.push({ ...image, ...newImageStyles });
 
       const imageBottom =
-        parseInt(newImageStyles.top) + parsePercentage(newImageStyles.width, containerWidth);
+        parseInt(newImageStyles.top) +
+        parsePercentage(newImageStyles.width, containerWidth);
       if (imageBottom > maxBottom) {
         maxBottom = imageBottom;
       }
@@ -67,7 +76,7 @@ const Gallery: React.FC = () => {
       <div className="relative w-full h-full lg:block">
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-2 gap-4 lg:hidden">
-          {images.map((image, index) => (
+          {IMAGES_DATA.map((image, index) => (
             <img
               key={index}
               src={`${process.env.PUBLIC_URL}/${image.src}`}
