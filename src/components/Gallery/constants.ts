@@ -1,4 +1,6 @@
-export const IMAGES_DATA = [
+import { ImageData } from "./interfaces";
+
+export const IMAGES_DATA: ImageData[] = [
     { src: "/resources/tattoo_1.jpeg", alt: "Image 1" },
     { src: "/resources/profile_ash.jpg", alt: "Image 2" },
     { src: "/resources/tattoo_1.jpeg", alt: "Image 3" },

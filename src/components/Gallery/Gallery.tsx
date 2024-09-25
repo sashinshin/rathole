@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IMAGES_DATA, DEBOUNCE_DELAY } from "./constants";
-import { ImageData } from "./interfaces";
+import { ImageData, StyledImageData } from "./interfaces";
 import {
   generateValidPosition,
   parsePercentage,
@@ -9,9 +9,10 @@ import {
 } from "./utils";
 
 const Gallery: React.FC = () => {
-  const [images, setImages] = useState<ImageData[]>([]);
+  const [images, setImages] = useState<StyledImageData[]>([]);
   const [containerHeight, setContainerHeight] = useState(0);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
 
   useEffect(() => {
     const handleResizeLayoutCalculation = debounce(() => {
@@ -43,7 +44,7 @@ const Gallery: React.FC = () => {
     let maxBottom = 0;
     resetImageIncrement();
     const containerWidth = window.innerWidth;
-    const positionedImages: ImageData[] = [];
+    const positionedImages: StyledImageData[] = [];
 
     for (const image of IMAGES_DATA) {
       const newImageStyles = generateValidPosition(
@@ -66,6 +67,8 @@ const Gallery: React.FC = () => {
     setContainerHeight(maxBottom + extraHeight);
   };
 
+  const closeModal = () => setSelectedImage(null);
+
   return (
     <section
       id="work"
@@ -81,7 +84,8 @@ const Gallery: React.FC = () => {
               key={index}
               src={`${process.env.PUBLIC_URL}/${image.src}`}
               alt={image.alt}
-              className="object-cover w-full h-auto border border-black rounded-lg shadow-md"
+              className="object-cover w-full h-auto border border-black rounded-lg shadow-md cursor-pointer"
+              onClick={() => setSelectedImage(image)} // Set selected image when clicked
             />
           ))}
         </div>
@@ -98,11 +102,41 @@ const Gallery: React.FC = () => {
                 left: image.left,
                 width: image.width,
               }}
-              className="object-cover border border-black shadow-lg rounded-md hover:blur"
+              className="object-cover border border-black shadow-lg rounded-md hover:blur cursor-pointer"
+              onClick={() => setSelectedImage(image)} // Set selected image when clicked
             />
           ))}
         </div>
       </div>
+
+      {/* Modal for Enlarged Image */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+          onClick={closeModal} // Close modal when clicking on the overlay
+        >
+          <div className="relative">
+            <img
+              src={`${process.env.PUBLIC_URL}/${selectedImage.src}`}
+              alt={selectedImage.alt}
+              style={{
+                maxWidth: "66vw", // Max width to two-thirds of the viewport width
+                maxHeight: "66vh", // Max height to two-thirds of the viewport height
+                width: "auto", // Maintain aspect ratio
+                height: "auto", // Maintain aspect ratio
+              }}
+              className="rounded-lg shadow-lg"
+            />
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white bg-black rounded-full px-2 py-1"
+            >
+              X
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

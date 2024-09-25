@@ -1,10 +1,12 @@
+export interface ImageData {
+  src: string;
+  alt: string;
+}
+
 export interface ImageStyles {
-    top: string;
-    left: string;
-    width: string;
-  }
+  top: string;
+  left: string;
+  width: string;
+}
   
-export interface ImageData extends ImageStyles {
-    src: string;
-    alt: string;
-  }
+export type StyledImageData = ImageData & ImageStyles;
