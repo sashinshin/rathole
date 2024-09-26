@@ -92,19 +92,24 @@ const Gallery: React.FC = () => {
         {/* Desktop Dynamic Layout */}
         <div className="hidden lg:block relative w-full h-full">
           {images.map((image, index) => (
-            <img
-              key={index}
-              src={`${process.env.PUBLIC_URL}/${image.src}`}
-              alt={image.alt}
+            <div
+            className="hover:blur cursor-pointer"
               style={{
                 position: "absolute",
                 top: image.top,
                 left: image.left,
                 width: image.width,
               }}
-              className="object-cover border border-black shadow-lg rounded-md hover:blur cursor-pointer"
-              onClick={() => setSelectedImage(image)} // Set selected image when clicked
-            />
+            >
+              <img
+                key={index}
+                src={`${process.env.PUBLIC_URL}/${image.src}`}
+                alt={image.alt}
+                className="object-cover border border-black shadow-lg rounded-md"
+                onClick={() => setSelectedImage(image)} // Set selected image when clicked
+              />
+              <p className="-translate-y-7 translate-x-2">{image.about}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -127,7 +132,6 @@ const Gallery: React.FC = () => {
               }}
               className="rounded-lg shadow-lg"
             />
-            {/* Close button */}
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-white bg-black rounded-full px-2 py-1"
