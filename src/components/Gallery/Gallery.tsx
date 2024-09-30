@@ -8,6 +8,12 @@ import {
   debounce,
 } from "./utils";
 
+// TODO:
+// update gallery
+// extend hero image + darken it
+// fix transition to about page
+
+
 const Gallery: React.FC = () => {
   const [images, setImages] = useState<StyledImageData[]>([]);
   const [containerHeight, setContainerHeight] = useState(0);
@@ -75,7 +81,7 @@ const Gallery: React.FC = () => {
       className="relative py-20 px-6 bg-gray-100"
       style={isLargeScreen ? { height: `${containerHeight}px` } : {}}
     >
-      <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">work</h2>
       <div className="relative w-full h-full lg:block">
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-2 gap-4 lg:hidden">
