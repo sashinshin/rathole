@@ -15,10 +15,11 @@ const About: React.FC = () => {
           textShadow: "3px 3px 0 #000, 6px 6px 0 #FF8C00, 9px 9px 0 #000",
         }}
       >
-        hahahahaha this is me sadgay
+        彩礼88W
       </h2>
-      <div className="max-w-3xl mx-auto text-center text-white">
-        <p>彩礼88W</p>
+      <div className="max-w-3xl px-10 mx-auto text-center text-white">
+        <p>hahahahaha</p>
+        <p>this is me sadgay</p>
         <img
           src={`${process.env.PUBLIC_URL}/resources/brat_gif.webp`}
           alt="Brat GIF"
