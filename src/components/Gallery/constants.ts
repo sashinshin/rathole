@@ -1,24 +1,18 @@
 import { ImageData } from "./interfaces";
 
 export const IMAGES_DATA: ImageData[] = [
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 1", about: "first tattoo image"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 2", about: "profile pic"  },
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 3"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 4", about: "other profile pic"  },
-    { src: "/resources/tattoo_design_1.jpeg", alt: "Image 5", about: "Tattoo image"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 6", },
-    { src: "/resources/tattoo_design_1.jpeg", alt: "Image 7", about: "Tattoo image again"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 8", about: "pfp image"  },
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 1", about: "same image"  },
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 1", about: "same image again hehe"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 2"  },
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 3", about: "Tattoo image 5?"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 4", about: "yeah pfp again"  },
-    { src: "/resources/tattoo_design_1.jpeg", alt: "Image 5", about: "Tattoo design"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 6", about: "pfp and icon"  },
-    { src: "/resources/tattoo_design_1.jpeg", alt: "Image 7", about: "Tattoo design*2"  },
-    { src: "/resources/profile_ash.jpg", alt: "Image 8"},
-    { src: "/resources/tattoo_1.jpeg", alt: "Image 1", about: "tattooo" },
+    { src: "/resources/IMG_2578.PNG", alt: "Tattoo designs in black and white", about: "tattoo design" },
+    { src: "/resources/IMG_2604.PNG", alt: "Tattoo designs in black and white"},
+    { src: "/resources/IMG_2615.PNG", alt: "Tattoo designs in black and white"},
+    // { src: "/resources/IMG_2629", alt: "Tattoo designs in black and white"}, ! dupe
+    { src: "/resources/IMG_2679.PNG", alt: "3d modeled person with tattoos"},
+    { src: "/resources/IMG_2805.PNG", alt: "3d modeled person surrounded by graphic letters"},
+    { src: "/resources/IMG_2856.PNG", alt: "Two 3d modeled people with tattoos"},
+    { src: "/resources/IMG_2859.PNG", alt: "The artist themself", about: "Me!:D"},
+    { src: "/resources/IMG_2898.PNG", alt: "Artwork featuring graphic text in a chaotic pattern"},
+    { src: "/resources/IMG_2913.PNG", alt: "Two 3d modeled people with tattoos"},
+    { src: "/resources/IMG_2954.PNG", alt: "3d modeled person surrounded by floating tattoo designs"},
+    { src: "/resources/IMG_2958.PNG", alt: "Tattoo designs in black and white"},
   ];
   
 // Debounce delay of 200ms

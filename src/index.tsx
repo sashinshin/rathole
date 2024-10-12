@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 /**
  * TODO:
- * 
- * options bar that opens windows
- * about page
  * links page
  * fun stuff
  */

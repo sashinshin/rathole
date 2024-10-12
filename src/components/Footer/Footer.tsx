@@ -56,14 +56,12 @@ const Footer: React.FC = () => {
       I HAVE SEEN THE FUTURE 
       <span className="mx-60"></span> 
       AND THERE IS NO FUTURE      
-      <span className="mx-40"></span>
-      Footer text this is cool...
       <span className="mx-20"></span>
-      [link]
+      <a href="https://www.instagram.com/sadgaydontcry/" target="_blank" rel="noopener noreferrer">[instagram]</a>
       <span className="mx-20"></span>
-      [link]
+      <a href="https://www.instagram.com/sadgaydontcry/" target="_blank" rel="noopener noreferrer">[instagram]</a>
       <span className="mx-20"></span>
-      [link]
+      <a href="https://www.instagram.com/sadgaydontcry/" target="_blank" rel="noopener noreferrer">[instagram]</a>
       <span className="mx-40"></span>
     </div>
   );

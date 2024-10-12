@@ -4,7 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom font family */
+:root {
+  --url: 
+}
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url('../public/resources/main_background.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 0;
 }

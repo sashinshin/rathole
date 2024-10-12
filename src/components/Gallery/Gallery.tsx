@@ -78,10 +78,10 @@ const Gallery: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative py-20 px-6 bg-gray-100"
+      className="relative py-20 px-6"
       style={isLargeScreen ? { height: `${containerHeight}px` } : {}}
     >
-      <h2 className="text-3xl font-bold text-center mb-8">work</h2>
+      {/* <h2 className="text-3xl font-bold text-center mb-8">work</h2> */}
       <div className="relative w-full h-full lg:block">
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-2 gap-4 lg:hidden">
